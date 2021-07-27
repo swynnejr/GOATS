@@ -1,6 +1,6 @@
 from flask_app import app
 
-from flask_app.controllers import fourteener
+from flask_app.controllers import goats
 
 if __name__ == "__main__":
     app.run (debug = True)

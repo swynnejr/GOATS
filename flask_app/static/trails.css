@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bevan', cursive;
+    font-style: normal;
+
+}
+
+
+html {
+    min-height: 100%;
+    background-image: url(trails.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* General layout */
+
+.turquoise-top {
+    min-height: 60px;
+    min-width: 987px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nav bar */
+
+nav {
+    min-height: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav h1 {
+    font-size: 2em;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+}
+
+nav div{
+    align-items: center;
+    gap: 25px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    justify-items: space-between;
+    align-items: center;
+    gap: 25px;
+    font-size: 1rem;
+}
+
+
+/* Utility classes */
+
+.flexed {
+    display: flex;
+}
+
+.container{
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
