@@ -12,6 +12,8 @@ class Athlete():
         self.home_state = data['home_state']
         self.weight = data['weight']
         self.sex = data['sex']
+        self.youtube = data['youtube']
+        self.bio = data['bio']
         self.user_id = session['user_id']
         # self.user = None
         self.created_at = data['created_at']
@@ -47,7 +49,7 @@ class Athlete():
     @classmethod
     def create_athlete(cls, data):
 
-        query = 'INSERT INTO athletes (first_name, last_name, birthday, nationality, home_state, weight, sex, user_id) VALUES (%(first_name)s, %(last_name)s, %(birthday)s, %(nationality)s, %(home_state)s, %(weight)s, %(sex)s, %(user_id)s);'
+        query = 'INSERT INTO athletes (first_name, last_name, birthday, nationality, home_state, weight, sex, youtube, bio, user_id) VALUES (%(first_name)s, %(last_name)s, %(birthday)s, %(nationality)s, %(home_state)s, %(weight)s, %(sex)s, %(youtube)s, %(bio)s, %(user_id)s);'
 
         result = connectToMySQL('goats_schema').query_db(query, data)
 

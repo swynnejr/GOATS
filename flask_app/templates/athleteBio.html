@@ -14,7 +14,7 @@
 
 <body>
     <div class="turquoise-top">
-        <nav class="container flexed">
+        <nav class="nav-container flexed">
             <div class="flexed">
                 <h1>GOATS of the Mountain</h1>
             </div>
@@ -28,7 +28,7 @@
         </nav>
     </div>
     <div class="body">
-        <h1>Athlete: {{athlete.first_name}} {{athlete.last_name}}</h1>
+        <h2>Athlete : {{athlete.first_name}} {{athlete.last_name}}</h2>
         <main class="container flexed">
             <ul>
                 <li>Date of Birth:</li>
@@ -38,9 +38,10 @@
                 <li>Home State:</li>
                 <li>{{athlete.home_state}}</li>
             </ul>
-            <iframe width="840" height="630" src="https://www.youtube.com/embed/QxWQPScIT0I?autoplay=1&mute=1">
+            <iframe width="840" height="630" src="https://www.youtube.com/embed/{{athlete.youtube}}?autoplay=1&mute=1">
             </iframe>
         </main>
+        <p class="container">{{athlete.bio}}</p>
     </div>
 </body>
 

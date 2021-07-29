@@ -71,6 +71,8 @@ def create_athlete():
             'home_state': request.form['home_state'],
             'weight': request.form['weight'],
             'sex': request.form['sex'],
+            'youtube': request.form['youtube'],
+            'bio': request.form['bio'],
             'user_id': session['user_id']
         }
         Athlete.create_athlete(data)
