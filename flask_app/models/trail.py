@@ -1,17 +1,18 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash, session
-from flask_app.models.user import User
 
 class Trail():
 
     def __init__(self, data):
         self.id = data['id']
         self.name = data['name']
+        self.start = data['start']
+        self.variation = data['variation']
+        self.distance = data['distance']
         self.peak_height = data['peak_height']
         self.vertical_gain = data['vertical_gain']
-        self.technical = data['technical']
-        self.beginner = data['beginner']
-        self.facilities = data['facilities']
+        self.country = data['country']
+        self.state = data['state']
         self.category1 = data['category1']
         self.category2 = data['category2']
         self.category3 = data['category3']
@@ -23,7 +24,7 @@ class Trail():
     @classmethod
     def create_trail(cls, data):
 
-        query = 'INSERT INTO trails (name, peak_height, vertical_gain, technical, difficulty, facilities, user_id, category1, category2, category3) VALUES (%(name)s, %(peak_height)s, %(vertical_gain)s, %(technical)s, %(difficulty)s, %(facilities)s, %(user_id)s, %(category1)s, %(category2)s, %(category3)s);'
+        query = 'INSERT INTO trails (name, start, variation, distance, peak_height, vertical_gain, country, state, user_id, category1, category2, category3) VALUES (%(name)s, %(start)s, %(variation)s, %(distance)s, %(peak_height)s, %(vertical_gain)s, %(country)s, %(state)s, %(user_id)s, %(category1)s, %(category2)s, %(category3)s);'
 
         result = connectToMySQL('goats_schema').query_db(query, data)
 
@@ -38,6 +39,10 @@ class Trail():
             flash("Trail should have a name.")
             is_valid = False
 
+        if len(data['start']) < 1:
+            flash("Trail should have a start.")
+            is_valid = False
+
         # if len(data['peak_height']) < 1:
         #     flash("Please fill out all fields")
         #     is_valid = False
@@ -46,16 +51,8 @@ class Trail():
         #     flash("Please fill out all fields")
         #     is_valid = False
 
-        if len(data['technical']) < 1:
-            flash("Please fill out all fields")
-            is_valid = False
-
-        if len(data['difficulty']) < 1:
-            flash("Please fill out all fields")
-            is_valid = False
-
-        if len(data['facilities']) < 1:
-            flash("Please fill out all fields")
-            is_valid = False
+        if len(data['country']) < 1:
+                    flash("Trail should have a country.")
+                    is_valid = False
 
         return is_valid
