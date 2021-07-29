@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='oneathlete.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+    </style>
+    <title>GOATS of the Mountain</title>
+</head>
+
+<body>
+    <div class="turquoise-top">
+        <nav class="container flexed">
+            <div class="flexed">
+                <h1>GOATS of the Mountain</h1>
+            </div>
+            <ul class="flexed">
+                <li><a href="/admin">{{session['username']}}</a></li>
+                <li><a href="/trails">Find a Trail</a></li>
+                <li><a href="/athletes">Search Athletes</a></li>
+                <li>Premier Races</li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="body">
+        <h1>Athlete: {{athlete.first_name}} {{athlete.last_name}}</h1>
+        <main class="container flexed">
+            <ul>
+                <li>Date of Birth:</li>
+                <li>{{athlete.birthday}}</li>
+                <li>Nationality:</li>
+                <li>{{athlete.nationality}}</li>
+                <li>Home State:</li>
+                <li>{{athlete.home_state}}</li>
+            </ul>
+            <iframe width="840" height="630" src="https://www.youtube.com/embed/QxWQPScIT0I?autoplay=1&mute=1">
+            </iframe>
+        </main>
+    </div>
+</body>
+
+</html>

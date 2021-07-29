@@ -33,6 +33,14 @@ class Athlete():
 
         return athletes
 
+    @classmethod
+    def get_one_athlete(cls, data):
+        query = 'SELECT * FROM athletes WHERE id = %(id)s;'
+
+        results = connectToMySQL('goats_schema').query_db(query,data)
+        athlete = Athlete(results[0])
+        return athlete
+
 # ADMIN SECTION BELOW
 
 

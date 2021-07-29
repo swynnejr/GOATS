@@ -64,7 +64,7 @@ nav ul {
     min-width: 750px;
     justify-content: center;
     align-items: center;
-    margin: 350px auto;
+    margin: 150px auto;
     padding: 1.5em;
     background-color: rgb(179, 174, 174);
     opacity: 80%;
@@ -82,7 +82,7 @@ nav ul {
 }
 
 #myTable {
-    border-collapse: collapse; Collapse borders
+    border-collapse: collapse;
     width: 100%; /* Full-width */
     border: 3px solid rgb(0, 0, 0); /* Add a grey border */
     background-color: grey;

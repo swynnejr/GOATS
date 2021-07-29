@@ -8,7 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
     </style>
-    <link rel="stylesheet" href="{{ url_for('static', filename='trails.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='athletes.css') }}">
     <script src="{{ url_for('static', filename='athscript.js') }}"></script>
 
     <title>GOATS of the Mountain: Athletes</title>
@@ -18,7 +18,7 @@
     <div class="turquoise-top">
         <nav class="container flexed">
             <div class="flexed">
-                <h1>GOATS of the Mountain</h1>
+                <h1><a href="/">GOATS of the Mountain</a></h1>
             </div>
             <ul class="flexed">
                 <li><a href="/admin">{{session['username']}}</a></li>
@@ -26,6 +26,7 @@
                 <li><a href="/athletes">Search Athletes</a></li>
                 <li>Premier Races</li>
                 <li><a href="/login">Login</a></li>
+                <li><a href="/logout">Log Out</a></li>
             </ul>
         </nav>
     </div>
@@ -42,7 +43,7 @@
             </thead>
             {% for athlete in athletes %}
             <tr>
-                <td>{{athlete.first_name}} {{athlete.last_name}}</td>
+                <td><a href="/athletes/{{athlete.id}}/{{athlete.last_name}}">{{athlete.first_name}} {{athlete.last_name}}</a></td>
                 <td>{{athlete.home_state}}</td>
                 <td>{{athlete.nationality}}</td>
             </tr>
