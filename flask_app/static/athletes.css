@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bevan', cursive;
+    font-style: normal;
+
+}
+
+
+html {
+    min-height: 100%;
+    background-image: url(trails.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+/* General layout */
+
+main {
+    margin: 0 auto
+}
+
+.turquoise-top {
+    min-height: 60px;
+    min-width: 987px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nav bar */
+
+nav {
+    min-height: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav h1 {
+    font-size: 2em;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+}
+
+nav div{
+    align-items: center;
+    gap: 25px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    justify-items: space-between;
+    align-items: center;
+    gap: 25px;
+    font-size: 1rem;
+}
+
+/* MAIN */
+
+#searchAthletes {
+    width: 50%;
+    min-width: 750px;
+    justify-content: center;
+    align-items: center;
+    margin: 350px auto;
+    padding: 1.5em;
+    background-color: rgb(179, 174, 174);
+    opacity: 80%;
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+    border-collapse: collapse; Collapse borders
+    width: 100%; /* Full-width */
+    border: 3px solid rgb(0, 0, 0); /* Add a grey border */
+    background-color: grey;
+    font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
+
+/* Utility classes */
+
+.flexed {
+    display: flex;
+}
+
+.container {
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}

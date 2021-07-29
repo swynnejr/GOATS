@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='trails.css') }}">
+    <script src="{{ url_for('static', filename='athscript.js') }}"></script>
+
+    <title>GOATS of the Mountain: Athletes</title>
+</head>
+
+<body>
+    <div class="turquoise-top">
+        <nav class="container flexed">
+            <div class="flexed">
+                <h1>GOATS of the Mountain</h1>
+            </div>
+            <ul class="flexed">
+                <li><a href="/admin">{{session['username']}}</a></li>
+                <li><a href="/trails">Find a Trail</a></li>
+                <li><a href="/athletes">Search Athletes</a></li>
+                <li>Premier Races</li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container" id="searchAthletes">
+        <h3>Athletes:</h3>
+        <input type="text" id="myInput" onkeyup="searchAthletes()" placeholder="Search for names..">
+        <table id="myTable">
+            <thead>
+                <tr class="header">
+                    <th>Name</th>
+                    <th>Home State</th>
+                    <th>Nationality</th>
+                </tr>
+            </thead>
+            {% for athlete in athletes %}
+            <tr>
+                <td>{{athlete.first_name}} {{athlete.last_name}}</td>
+                <td>{{athlete.home_state}}</td>
+                <td>{{athlete.nationality}}</td>
+            </tr>
+            {% endfor %}
+        </table><br>
+    </div>
+</body>
+
+</html>

@@ -26,7 +26,7 @@
         <option value="p2p">Point to Point</option>
     </select><br>
     Distance (miles): <input type="number" step=".25" name="distance"><br>
-    Peak Height: <input type="number" step="10" name="peak_height"><br>
+    Peak Height: <input type="number" step="5" name="peak_height"><br>
     Vertical Gain: <input type="number" step="25" name="vertical_gain"><br>
     Country: <select name="country" id="country">
         <option value="USA">United States</option>
@@ -58,7 +58,11 @@
         <option value="USA">USA</option>
     </select><br>
     Home State: <select name="home_state" id="home_state">
+        <option value="arizona">Arizona</option>
         <option value="colorado">Colorado</option>
+        <option value="kansas">Kansas</option>
+        <option value="nebraska">Nebraska</option>
+        <option value="oregon">Oregon</option>
     </select><br>
     Weight (lbs): <select name="weight" id="weight">
         <option value="NA">NA</option>
@@ -88,7 +92,7 @@
         {% endfor %}
     {% endif %}
     {% endwith %}
-    <form action="/admin/create/trail" method="POST">
+    <form action="/admin/create/perfromance" method="POST">
     Name: <input type="text" name="name"><br>
     Starting point: <input type="text" name="start"><br>
     Variation: <select name="variation" id="variation">

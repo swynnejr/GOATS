@@ -17,6 +17,25 @@ class Athlete():
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
+
+
+    @classmethod
+    def get_all_athletes(cls):
+
+        query = "SELECT * FROM athletes;"
+
+        results = connectToMySQL('goats_schema').query_db(query)
+
+        athletes = []
+
+        for item in results:
+            athletes.append(cls(item))
+
+        return athletes
+
+# ADMIN SECTION BELOW
+
+
     @classmethod
     def create_athlete(cls, data):
 

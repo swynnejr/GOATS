@@ -7,6 +7,17 @@ from flask import render_template, redirect, session, request, flash
 def index():
     return render_template("index.html")
 
+
+# ATHLETES PAGES
+
+@app.route('/athletes')
+def display_athletes():
+    athletes = Athlete.get_all_athletes()
+    return render_template("athletes.html", athletes = athletes)
+
+
+# TRAILS PAGES
+
 @app.route('/trails')
 def trails():
     return render_template("trails.html")
@@ -14,6 +25,8 @@ def trails():
 @app.route('/trails/searched')
 def trailsSearched():
     return render_template("trailsSearched.html")
+
+# ADMIN SECTION BELOW
 
 @app.route('/admin')
 def admin():
