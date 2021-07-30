@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='onetrail.css') }}">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');</style>
+    <title>Goats of the Mountain: Trails</title>
+</head>
+<body>
+    <div class="turquoise-top">
+        <nav class="container flexed">
+            <div class="flexed">
+                <h1><a href="/">GOATS of the Mountain</a></h1>
+            </div>
+            <ul class="flexed">
+                <li><a href="/trails">Find a 14er</a></li>
+                <li>Search Athletes</li>
+                <li>Premier Races</li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <main class="searchTrails flexed">
+            <form action="/trails/searched">
+                <label for="trailSearch" id="trailSearch">Search Trails:</label>
+                <input type="search" id="trailSearch" name="trailSearch">
+                <input type="submit" id="searchbutton">
+            </form>
+            <table>
+                <th></th>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

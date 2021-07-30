@@ -21,6 +21,32 @@ class Trail():
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
+
+    @classmethod
+    def get_all_trails(cls):
+
+        query = "SELECT * FROM trails ORDER BY variation;"
+
+        results = connectToMySQL('goats_schema').query_db(query)
+
+        trails = []
+
+        for item in results:
+            trails.append(cls(item))
+
+        return trails
+
+    @classmethod
+    def get_one_trail(cls, data):
+        query = 'SELECT * FROM trails WHERE id = %(id)s;'
+
+        results = connectToMySQL('goats_schema').query_db(query,data)
+        trail = Trail(results[0])
+        return trail
+
+
+# ADMIN SECTION BELOW
+
     @classmethod
     def create_trail(cls, data):
 

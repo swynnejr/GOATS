@@ -19,7 +19,8 @@ def display_athletes():
 # TRAILS PAGES
 
 @app.route('/trails')
-def trails():
+def display_trails():
+    trails = Trail.get_all_trails()
     return render_template("trails.html")
 
 @app.route('/trails/searched')
