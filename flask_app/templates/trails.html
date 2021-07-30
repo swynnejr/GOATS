@@ -19,6 +19,7 @@
                 <h1><a href="/">GOATS of the Mountain</a></h1>
             </div>
             <ul class="flexed">
+                <li><a href="/admin">{{session['username']}}</a></li>
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
                 <li>Premier Races</li>
@@ -29,7 +30,7 @@
     </div>
     <div class="container" id="searchTrails">
         <h3>Trails:</h3>
-        <input type="text" id="myInput" onkeyup="searchAthletes()" placeholder="Search for names..">
+        <input type="text" id="myInput" onkeyup="searchTrails()" placeholder="Search for names..">
         <table id="myTable">
             <thead>
                 <tr class="header">

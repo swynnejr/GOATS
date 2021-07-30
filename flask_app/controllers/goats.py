@@ -15,17 +15,33 @@ def display_athletes():
     athletes = Athlete.get_all_athletes()
     return render_template("athletes.html", athletes = athletes)
 
+@app.route('/athletes/<int:id>')
+def athleteBio(id):
+    data = {
+        'id':id
+    }
+
+    athlete = Athlete.get_one_athlete(data)
+    return render_template ('athleteBio.html', athlete = athlete)
+
+
+
 
 # TRAILS PAGES
 
 @app.route('/trails')
 def display_trails():
     trails = Trail.get_all_trails()
-    return render_template("trails.html")
+    return render_template("trails.html", trails = trails)
 
-@app.route('/trails/searched')
-def trailsSearched():
-    return render_template("trailsSearched.html")
+@app.route('/trails/<int:id>')
+def trailBio(id):
+    data = {
+        'id':id
+    }
+
+    trail = Trail.get_one_trail(data)
+    return render_template ('trailBio.html', trail = trail)
 
 # ADMIN SECTION BELOW
 

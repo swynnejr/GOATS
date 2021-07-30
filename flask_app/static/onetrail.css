@@ -54,6 +54,38 @@ nav ul {
 
 /* Body */
 
+.body {
+    text-align: center;
+    min-width: 987px;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+    font-size: 125%;
+}
+
+h2 {
+    font-size: 2em;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+    margin: 30px;
+}
+
+p {
+    color: white;
+    text-shadow: 1px 1px black;
+    padding: 50px;
+    max-width: 50%;
+}
+
+.details {
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+
+main ul {
+    min-width: 150px;
+    list-style-type: none;
+}
+
+
 
 /* Utility classes */
 
@@ -61,9 +93,16 @@ nav ul {
     display: flex;
 }
 
-.container{
+.nav-container{
     width: 70%;
     justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.container{
+    width: 70%;
+    justify-content: space-evenly;
     align-items: center;
     margin: 0 auto;
 }
