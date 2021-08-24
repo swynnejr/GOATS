@@ -14,7 +14,7 @@ class Athlete():
         self.sex = data['sex']
         self.youtube = data['youtube']
         self.bio = data['bio']
-        self.user_id = session['user_id']
+        # self.user_id = session['user_id']
         # self.user = None
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']

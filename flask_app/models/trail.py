@@ -16,7 +16,7 @@ class Trail():
         self.category1 = data['category1']
         self.category2 = data['category2']
         self.category3 = data['category3']
-        self.user_id = session['user_id']
+        # self.user_id = session['user_id']
         # self.user = None
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
