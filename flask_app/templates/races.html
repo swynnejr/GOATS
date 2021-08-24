@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='races.css') }}">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');</style>
+
     <title>GOATS of the Mountain: Premiere Races</title>
 </head>
 <body>
+    <div class="turquoise-top">
+        <nav class="container flexed">
+            <div class="flexed">
+                <h1><a href="/">GOATS of the Mountain</a></h1>
+            </div>
+            <ul class="flexed">
+                <li><a href="/admin">{{session['username']}}</a></li>
+                <li><a href="/trails">Find a 14er</a></li>
+                <li><a href="/athletes">Search Athletes</a></li>
+                <li><a href="/races">Premier Races</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="body">
+        <main class="container">
+            <h1>Want to see upcoming races?</h1>
+        </main>
+    </div>
+
     
 </body>
 </html>

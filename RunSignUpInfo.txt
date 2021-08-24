@@ -1,0 +1,8 @@
+Request Token Endpoint:
+https://runsignup.com/oauth/requestToken.php
+
+OAuth Login URL:
+https://runsignup.com/OAuth/Verify
+
+Access Token Endpoint:
+https://runsignup.com/oauth/accessToken.php
