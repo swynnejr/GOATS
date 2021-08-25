@@ -54,7 +54,7 @@ def races():
 
 @app.route('/parks/searched')
 def parkSearch():
-    search = request.args.get('state')
+    search = request.args.get('stateCode')
     print(search)
     return render_template("parksSearched.html", search = search)
 

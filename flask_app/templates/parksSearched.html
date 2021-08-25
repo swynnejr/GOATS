@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='parks.css') }}">
     <style>@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');</style>
     <script src="{{ url_for('static', filename='parksscript.js') }}"></script>
-    <!-- <script type="text/js">
-        var search = '{{search}}'
-    </script> -->
-
     <title>GOATS of the Mountain: State Parks</title>
 </head>
 <body>
@@ -35,12 +31,13 @@
 
             <h3>Search again:</h3>
             <form action="/parks/searched">
-                <label for="state">State Abbreviation:</label>
-                <input type="text" name="state" placeholder="Two letters only">
+                <label for="stateCode">State Abbreviation:</label>
+                <input type="text" name="stateCode" placeholder="Two letters only">
                 <input type="submit" value="Search by State">
             </form>
         </main>
     </div>
+
 
     
 </body>
