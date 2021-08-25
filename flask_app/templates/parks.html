@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='races.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='parks.css') }}">
     <style>@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');</style>
-
     <title>GOATS of the Mountain: Premiere Races</title>
 </head>
 <body>
@@ -19,7 +18,7 @@
                 <li><a href="/admin">{{session['username']}}</a></li>
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
-                <li><a href="/races">Premier Races</a></li>
+                <li><a href="/parks">Find a State Park</a></li>
                 <li><a href="/login">Login</a></li>
                 <li><a href="/logout">Log Out</a></li>
             </ul>
@@ -27,7 +26,12 @@
     </div>
     <div class="body">
         <main class="container">
-            <h1>Want to see upcoming races?</h1>
+            <h2>Looking for a State Park?</h2>
+            <form action="/parks/searched">
+                <label for="state">State Abbreviation:</label>
+                <input type="text" name="state" placeholder="Two letters only">
+                <input type="submit" value="Search by State">
+            </form>
         </main>
     </div>
 

@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='onetrail.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='parks.css') }}">
     <style>@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');</style>
-    <title>Goats of the Mountain: Trails</title>
+    <script src="{{ url_for('static', filename='parksscript.js') }}"></script>
+    <!-- <script type="text/js">
+        var search = '{{search}}'
+    </script> -->
+
+    <title>GOATS of the Mountain: State Parks</title>
 </head>
 <body>
     <div class="turquoise-top">
-        <nav class="nav-container flexed">
+        <nav class="container flexed">
             <div class="flexed">
                 <h1><a href="/">GOATS of the Mountain</a></h1>
             </div>
@@ -25,24 +30,18 @@
         </nav>
     </div>
     <div class="body">
-        <h2>Trail : {{trail.name}}</h2>
-        <main class="container flexed">
-            <ul>
-                <li>Starting Point:</li>
-                <li class="details">{{trail.start}}</li>
-                <li>Peak Height:</li>
-                <li class="details">{{trail.peak_height}}</li>
-                <li>Vertical Gain:</li>
-                <li class="details">{{trail.vertical_gain}}</li>
-                <li>Distance:</li>
-                <li class="details">{{trail.distance}}</li>
-                <li>Variation:</li>
-                <li class="details">{{trail.variation}}</li>
-                <li>State:</li>
-                <li class="details">{{trail.state}}</li>
-            </ul>
+        <main class="container">
+            <h2 id="search">State Parks in {{search}}</h2>
+
+            <h3>Search again:</h3>
+            <form action="/parks/searched">
+                <label for="state">State Abbreviation:</label>
+                <input type="text" name="state" placeholder="Two letters only">
+                <input type="submit" value="Search by State">
+            </form>
         </main>
-        <p class="container">{{trail.bio|safe}}</p>
     </div>
+
+    
 </body>
 </html>

@@ -59,13 +59,13 @@ nav ul {
 .body {
     text-align: center;
     min-width: 987px;
-    text-shadow: 1px 1px rgb(255, 255, 255);
-    font-size: 125%;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px rgb(15, 15, 15);
 }
 
 h2 {
     font-size: 2em;
-    text-shadow: 1px 1px rgb(255, 255, 255);
+    text-shadow: 2px 2px rgb(15, 15, 15);
     margin: 30px;
 }
 

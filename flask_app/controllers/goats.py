@@ -3,6 +3,7 @@ from flask_app.models.trail import Trail
 from flask_app.models.athlete import Athlete
 from flask import render_template, redirect, session, request, flash
 
+
 from flask_bcrypt import Bcrypt
 
 @app.route('/')
@@ -45,11 +46,17 @@ def trailBio(id):
     trail = Trail.get_one_trail(data)
     return render_template ('trailBio.html', trail = trail)
 
-# RACES SECTION
+# PARKS SECTION
 
-@app.route('/races')
+@app.route('/parks')
 def races():
-    return render_template("races.html")
+    return render_template("parks.html")
+
+@app.route('/parks/searched')
+def parkSearch():
+    search = request.args.get('state')
+    print(search)
+    return render_template("parksSearched.html", search = search)
 
 
 # ADMIN SECTION BELOW
