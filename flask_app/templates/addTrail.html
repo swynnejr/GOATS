@@ -4,124 +4,146 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');</style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='addtrail.css') }}">
     <title>GOAT Administrator</title>
 </head>
 <body>
-    <p><a href="/">Home</a></p>
-    <h1>Add Trail</h1>
-    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
-    {% if messages %}                            <!-- check if there are any messages -->
-        {% for message in messages %}            <!-- loop through the messages -->
-            <h1 style="color: red;">{{message}}</h1>                   <!-- display each message in a paragraph tag -->
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-    <form action="/admin/create/trail" method="POST">
-    Name: <input type="text" name="name"><br>
-    Starting point: <input type="text" name="start"><br>
-    Variation: <select name="variation" id="variation">
-        <option value="roundtrip">Round Trip</option>
-        <option value="ascent">Ascent</option>
-        <option value="descent">Descent</option>
-        <option value="p2p">Point to Point</option>
-    </select><br>
-    Distance (miles): <input type="number" step=".25" name="distance"><br>
-    Peak Height: <input type="number" step="5" name="peak_height"><br>
-    Vertical Gain: <input type="number" step="25" name="vertical_gain"><br>
-    Country: <select name="country" id="country">
-        <option value="USA">United States</option>
-    </select>
-    State: <select name="state" id="state">
-        <option value="colorado">Colorado</option>
-    </select><br>
-    Category 1: <select name="category1" id="category1">
-        <option value="14er">Fourteener</option>
-    </select><br>
-    Category 2: <input type="text" name="category2"><br>
-    Category 3: <input type="text" name="category3"><br>
-    <input type="submit">
-    </form>
-
-    <h1>Add Athlete</h1>
-    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
-    {% if messages %}                            <!-- check if there are any messages -->
-        {% for message in messages %}            <!-- loop through the messages -->
-            <h1 style="color: red;">{{message}}</h1>                   <!-- display each message in a paragraph tag -->
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-    <form action="/admin/create/athlete" method="POST">
-    First Name: <input type="text" name="first_name"><br>
-    Last Name: <input type="text" name="last_name"><br>
-    Born on: <input type="date" name="birthday"><br>
-    Home Country: <select name="nationality" id="nationality">
-        <option value="USA">USA</option>
-    </select><br>
-    Home State: <select name="home_state" id="home_state">
-        <option value="Arizona">Arizona</option>
-        <option value="California">California</option>
-        <option value="Colorado">Colorado</option>
-        <option value="Kansas">Kansas</option>
-        <option value="Minnesota">Minnesota</option>
-        <option value="Nebraska">Nebraska</option>
-        <option value="Oregon">Oregon</option>
-    </select><br>
-    Weight (lbs): <select name="weight" id="weight">
-        <option value="NA">NA</option>
-        <option value="100">Under 100</option>
-        <option value="101-120">101-120</option>
-        <option value="121-140">121-140</option>
-        <option value="141-160">141-160</option>
-        <option value="161-180">161-180</option>
-        <option value="181-200">181-200</option>
-        <option value="201-220">201-220</option>
-        <option value="221-240">221-240</option>
-        <option value="over240">240 and above</option>
-    </select><br>
-    Sex: <select name="sex" id="sex">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="non-binary">Non-Binary</option>
-        <option value="no_response">No Response</option>
-    </select><br>
-    YouTube: <input type="text" name="youtube">(ONLY THE v="   ")<br>
-    Bio: <br>
-    <textarea name="bio" id="bio" cols="30" rows="10"></textarea>(10,000 characters allowed)
-    <input type="submit">
-    </form>
-    <h1>Add Performance</h1>
-    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
-    {% if messages %}                            <!-- check if there are any messages -->
-        {% for message in messages %}            <!-- loop through the messages -->
-            <h1 style="color: red;">{{message}}</h1>                   <!-- display each message in a paragraph tag -->
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-    <form action="/admin/create/perfromance" method="POST">
-    Name: <input type="text" name="name"><br>
-    Starting point: <input type="text" name="start"><br>
-    Variation: <select name="variation" id="variation">
-        <option value="roundtrip">Round Trip</option>
-        <option value="ascent">Ascent</option>
-        <option value="descent">Descent</option>
-        <option value="p2p">Point to Point</option>
-    </select><br>
-    Distance (miles): <input type="number" step=".25" name="distance"><br>
-    Peak Height: <input type="number" step="10" name="peak_height"><br>
-    Vertical Gain: <input type="number" step="25" name="vertical_gain"><br>
-    Country: <select name="country" id="country">
-        <option value="USA">United States</option>
-    </select>
-    State: <select name="state" id="state">
-        <option value="colorado">Colorado</option>
-    </select><br>
-    Category 1: <select name="category1" id="category1">
-        <option value="14er">Fourteener</option>
-    </select><br>
-    Category 2: <input type="text" name="category2"><br>
-    Category 3: <input type="text" name="category3"><br>
-    <input type="submit">
-    </form>
+    <div class="turquoise-top">
+        <nav class="container flexed">
+            <div class="flexed">
+                <h1><a href="/">GOATS of the Mountain</a></h1>
+            </div>
+            <ul class="flexed">
+                <li><a href="/admin">{{session['username']}}</a></li>
+                <li><a href="/trails">Find a 14er</a></li>
+                <li><a href="/athletes">Search Athletes</a></li>
+                <li><a href="/parks">Find a State Park</a></li>
+                {% if session['username'] %}
+                <li><a href="/logout">Log Out</a></li>
+                {% else %}
+                <li><a href="/login">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    <div class="body-container flexed">
+        <main>
+            <h1>Add Trail</h1><br>
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <h1 style="color: red;">{{message}}</h1>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/admin/create/trail" method="POST">
+            Name: <input type="text" name="name"><br>
+            Starting point: <input type="text" name="start"><br>
+            Variation: <select name="variation" id="variation">
+                <option value="roundtrip">Round Trip</option>
+                <option value="ascent">Ascent</option>
+                <option value="descent">Descent</option>
+                <option value="p2p">Point to Point</option>
+            </select><br>
+            Distance (miles): <input type="number" step=".25" name="distance"><br>
+            Peak Height: <input type="number" step="5" name="peak_height"><br>
+            Vertical Gain: <input type="number" step="25" name="vertical_gain"><br>
+            Country: <select name="country" id="country">
+                <option value="USA">United States</option>
+            </select>
+            State: <select name="state" id="state">
+                <option value="colorado">Colorado</option>
+            </select><br>
+            Category 1: <select name="category1" id="category1">
+                <option value="14er">Fourteener</option>
+            </select><br>
+            Category 2: <input type="text" name="category2"><br>
+            Category 3: <input type="text" name="category3"><br>
+            <input type="submit">
+            </form><br>
+            <h1>Add Athlete</h1><br>
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <h1 style="color: red;">{{message}}</h1>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/admin/create/athlete" method="POST">
+            First Name: <input type="text" name="first_name"><br>
+            Last Name: <input type="text" name="last_name"><br>
+            Born on: <input type="date" name="birthday"><br>
+            Home Country: <select name="nationality" id="nationality">
+                <option value="USA">USA</option>
+            </select><br>
+            Home State: <select name="home_state" id="home_state">
+                <option value="Arizona">Arizona</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Nebraska">Nebraska</option>
+                <option value="Oregon">Oregon</option>
+            </select><br>
+            Weight (lbs): <select name="weight" id="weight">
+                <option value="NA">NA</option>
+                <option value="100">Under 100</option>
+                <option value="101-120">101-120</option>
+                <option value="121-140">121-140</option>
+                <option value="141-160">141-160</option>
+                <option value="161-180">161-180</option>
+                <option value="181-200">181-200</option>
+                <option value="201-220">201-220</option>
+                <option value="221-240">221-240</option>
+                <option value="over240">240 and above</option>
+            </select><br>
+            Sex: <select name="sex" id="sex">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-Binary</option>
+                <option value="no_response">No Response</option>
+            </select><br>
+            YouTube: <input type="text" name="youtube">(ONLY THE v="   ")<br>
+            Bio: <br>
+            <textarea name="bio" id="bio" cols="30" rows="10"></textarea>(10,000 characters allowed)
+            <input type="submit">
+            </form><br>
+            <h1>Add Performance</h1><br>
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <h1 style="color: red;">{{message}}</h1>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/admin/create/perfromance" method="POST">
+            Name: <input type="text" name="name"><br>
+            Starting point: <input type="text" name="start"><br>
+            Variation: <select name="variation" id="variation">
+                <option value="roundtrip">Round Trip</option>
+                <option value="ascent">Ascent</option>
+                <option value="descent">Descent</option>
+                <option value="p2p">Point to Point</option>
+            </select><br>
+            Distance (miles): <input type="number" step=".25" name="distance"><br>
+            Peak Height: <input type="number" step="10" name="peak_height"><br>
+            Vertical Gain: <input type="number" step="25" name="vertical_gain"><br>
+            Country: <select name="country" id="country">
+                <option value="USA">United States</option>
+            </select>
+            State: <select name="state" id="state">
+                <option value="colorado">Colorado</option>
+            </select><br>
+            Category 1: <select name="category1" id="category1">
+                <option value="14er">Fourteener</option>
+            </select><br>
+            Category 2: <input type="text" name="category2"><br>
+            Category 3: <input type="text" name="category3"><br>
+            <input type="submit">
+            </form>
+        </main>
+    </div>
 
 </body>
 </html>

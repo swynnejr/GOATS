@@ -25,8 +25,11 @@
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
                 <li><a href="/parks">Find a State Park</a></li>
-                <li><a href="/login">Login</a></li>
+                {% if session['username'] %}
                 <li><a href="/logout">Log Out</a></li>
+                {% else %}
+                <li><a href="/login">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>

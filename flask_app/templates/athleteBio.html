@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='oneathlete.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='athletes.css') }}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
     </style>
@@ -23,8 +23,11 @@
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
                 <li><a href="/parks">Find a State Park</a></li>
-                <li><a href="/login">Login</a></li>
+                {% if session['username'] %}
                 <li><a href="/logout">Log Out</a></li>
+                {% else %}
+                <li><a href="/login">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>

@@ -28,7 +28,7 @@ main {
     min-width: 987px;
     align-items: center;
     justify-content: center;
-    background: rgba(163, 153, 144, 0.5);
+    background: rgba(163, 153, 144, 0.25);
 
 }
 
@@ -59,21 +59,49 @@ nav ul {
     font-size: 1rem;
 }
 
-/* MAIN */
+/* Main content */
+
+.body {
+    text-align: center;
+    min-width: 987px;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+    font-size: 125%;
+}
+
+h2 {
+    font-size: 2em;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+    margin: 30px;
+}
+
+p {
+    color: white;
+    text-shadow: 1px 1px black;
+    padding: 50px;
+    max-width: 50%;
+}
+
+main ul {
+    min-width: 150px;
+    list-style-type: none;
+}
+
+
+/* SEARCH TABLE */
 
 #searchAthletes {
     width: 50%;
     min-width: 750px;
     justify-content: center;
     align-items: center;
-    margin: 150px auto;
+    margin: 75px auto;
     padding: 1.5em;
     background-color: rgb(179, 174, 174);
-    opacity: 80%;
+    opacity: 90%;
 }
 
 #myInput {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-image: url('/static/searchicon.png'); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
     width: 100%; /* Full-width */
