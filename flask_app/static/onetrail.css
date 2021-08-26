@@ -29,17 +29,23 @@ html {
 
 }
 
+a, a:hover, a:visited, a:active, a:link {
+    color: inherit;
+    text-decoration: none;
+   }
+
 /* Nav bar */
 
 nav {
     min-height: 60px;
     align-items: center;
     justify-content: center;
+
 }
 
 nav h1 {
     font-size: 2em;
-    text-shadow: 1px 1px rgb(255, 255, 255);
+    text-shadow: .5px .5px rgb(255, 255, 255);
 }
 
 nav div{
@@ -54,15 +60,27 @@ nav ul {
     align-items: center;
     gap: 25px;
     font-size: 1rem;
+    text-shadow: .5px .5px rgb(255, 255, 255);
+
 }
 
 /* Body */
 
 .body {
     text-align: center;
-    min-width: 987px;
+    width: 30%;
     text-shadow: 1px 1px rgb(255, 255, 255);
     font-size: 125%;
+    
+}
+
+main {
+    background: rgba(163, 153, 144, 0.5);
+
+}
+
+iframe {
+    min-width: 500px;
 }
 
 h2 {
@@ -106,7 +124,7 @@ main ul {
 
 .container{
     width: 70%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     margin: 0 auto;
 }

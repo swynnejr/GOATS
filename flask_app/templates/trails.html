@@ -24,7 +24,7 @@
                 <li><a href="/admin">{{session['username']}}</a></li>
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
-                <li><a href="/parks">Find a State Park</a></li>
+                <li><a href="/parks">Find a National Park</a></li>
                 {% if session['username'] %}
                 <li><a href="/logout">Log Out</a></li>
                 {% else %}
@@ -42,6 +42,8 @@
                     <th>Name</th>
                     <th>Peak Height</th>
                     <th>Vertical Gain</th>
+                    <th>Starting Point</th>
+                    <th>Type</th>
                     <th>Distance</th>
                 </tr>
             </thead>
@@ -50,6 +52,8 @@
                 <td><a href="/trails/{{trail.id}}">{{trail.name}}</a></td>
                 <td>{{trail.peak_height}}</td>
                 <td>{{trail.vertical_gain}}</td>
+                <td>{{trail.start}}</td>
+                <td>{{trail.variation}}</td>
                 <td>{{trail.distance}}</td>
             </tr>
             {% endfor %}

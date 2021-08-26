@@ -13,6 +13,7 @@ class Trail():
         self.vertical_gain = data['vertical_gain']
         self.country = data['country']
         self.state = data['state']
+        self.alltrails = data['alltrails']
         self.category1 = data['category1']
         self.category2 = data['category2']
         self.category3 = data['category3']
@@ -50,7 +51,7 @@ class Trail():
     @classmethod
     def create_trail(cls, data):
 
-        query = 'INSERT INTO trails (name, start, variation, distance, peak_height, vertical_gain, country, state, user_id, category1, category2, category3) VALUES (%(name)s, %(start)s, %(variation)s, %(distance)s, %(peak_height)s, %(vertical_gain)s, %(country)s, %(state)s, %(user_id)s, %(category1)s, %(category2)s, %(category3)s);'
+        query = 'INSERT INTO trails (name, start, variation, distance, peak_height, vertical_gain, country, state, alltrails, user_id, category1, category2, category3) VALUES (%(name)s, %(start)s, %(variation)s, %(distance)s, %(peak_height)s, %(vertical_gain)s, %(country)s, %(state)s, %(alltrails)s, %(user_id)s, %(category1)s, %(category2)s, %(category3)s);'
 
         result = connectToMySQL('goats_schema').query_db(query, data)
 

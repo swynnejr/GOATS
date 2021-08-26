@@ -10,7 +10,7 @@ async function getParksData() {
     console.log(search);
     console.log(parksData.data);
     const html = parksData.data.map(park => {
-        return `<a href="${park.url}">${park.fullName}</a><br>
+        return `<h2><a href="${park.url}">${park.fullName}</a></h2>
         <h4>${park.description}</h4><br>`
     }).join('');
     document.querySelector("#search_results").insertAdjacentHTML("afterbegin", html);

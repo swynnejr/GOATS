@@ -18,7 +18,7 @@
                 <li><a href="/admin">{{session['username']}}</a></li>
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
-                <li><a href="/parks">Find a State Park</a></li>
+                <li><a href="/parks">Find a National Park</a></li>
                 {% if session['username'] %}
                 <li><a href="/logout">Log Out</a></li>
                 {% else %}
@@ -46,15 +46,18 @@
                 <option value="descent">Descent</option>
                 <option value="p2p">Point to Point</option>
             </select><br>
-            Distance (miles): <input type="number" step=".25" name="distance"><br>
-            Peak Height: <input type="number" step="5" name="peak_height"><br>
-            Vertical Gain: <input type="number" step="25" name="vertical_gain"><br>
+            Distance (miles): <input type="number" name="distance"><br>
+            Peak Height: <input type="number" name="peak_height"><br>
+            Vertical Gain: <input type="number" name="vertical_gain"><br>
             Country: <select name="country" id="country">
                 <option value="USA">United States</option>
             </select>
             State: <select name="state" id="state">
                 <option value="colorado">Colorado</option>
             </select><br>
+            Find Trail > Share > Embed <br>
+            src="ENTER THIS URL" (between the quotes)<br>
+            All Trails Embed: <input type="text" name="alltrails"><br>
             Category 1: <select name="category1" id="category1">
                 <option value="14er">Fourteener</option>
             </select><br>
@@ -104,12 +107,13 @@
                 <option value="non-binary">Non-Binary</option>
                 <option value="no_response">No Response</option>
             </select><br>
-            YouTube: <input type="text" name="youtube">(ONLY THE v="   ")<br>
+            From the URL: watch?v="ENTER THIS SNIPPET"<br>
+            YouTube: <input type="text" name="youtube"><br>
             Bio: <br>
             <textarea name="bio" id="bio" cols="30" rows="10"></textarea>(10,000 characters allowed)
             <input type="submit">
             </form><br>
-            <h1>Add Performance</h1><br>
+            <!-- <h1>Add Performance</h1><br> -->
             {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
             {% if messages %}                            <!-- check if there are any messages -->
                 {% for message in messages %}            <!-- loop through the messages -->
@@ -117,7 +121,7 @@
                 {% endfor %}
             {% endif %}
             {% endwith %}
-            <form action="/admin/create/perfromance" method="POST">
+            <!-- <form action="/admin/create/perfromance" method="POST">
             Name: <input type="text" name="name"><br>
             Starting point: <input type="text" name="start"><br>
             Variation: <select name="variation" id="variation">
@@ -141,7 +145,7 @@
             Category 2: <input type="text" name="category2"><br>
             Category 3: <input type="text" name="category3"><br>
             <input type="submit">
-            </form>
+            </form> -->
         </main>
     </div>
 

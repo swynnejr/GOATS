@@ -29,17 +29,23 @@ html {
 
 }
 
+a:hover, a:visited, a:active, a:link {
+    color: inherit;
+    text-decoration: none;
+   }
+
 /* Nav bar */
 
 nav {
     min-height: 60px;
     align-items: center;
     justify-content: center;
+
 }
 
 nav h1 {
     font-size: 2em;
-    text-shadow: 1px 1px rgb(0, 0, 0);
+    text-shadow: .5px .5px rgb(255, 255, 255);
 }
 
 nav div{
@@ -54,6 +60,8 @@ nav ul {
     align-items: center;
     gap: 25px;
     font-size: 1rem;
+    text-shadow: .5px .5px rgb(255, 255, 255);
+
 }
 
 /* Body */
@@ -76,7 +84,9 @@ main {
 }
 
 
-a {
+#search-results a {
+    font-size: 2rem;
+    color: black;
     text-shadow: .5px .5px rgb(255, 255, 255);
 }
 

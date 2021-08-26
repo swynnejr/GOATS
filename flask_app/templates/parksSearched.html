@@ -19,7 +19,7 @@
                 <li><a href="/admin">{{session['username']}}</a></li>
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
-                <li><a href="/parks">Find a State Park</a></li>
+                <li><a href="/parks">Find a National Park</a></li>
                 {% if session['username'] %}
                 <li><a href="/logout">Log Out</a></li>
                 {% else %}
@@ -29,7 +29,7 @@
         </nav>
     </div>
     <div class="body">
-        <h2 id="search">State Parks in: {{search}}</h2>
+        <h2 id="search">National Parks in: {{search}}</h2>
         <main class="container">
             <div id="search_results"></div><br>
 

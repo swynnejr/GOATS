@@ -18,7 +18,7 @@
                 <li><a href="/admin">{{session['username']}}</a></li>
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
-                <li><a href="/parks">Find a State Park</a></li>
+                <li><a href="/parks">Find a National Park</a></li>
                 {% if session['username'] %}
                 <li><a href="/logout">Log Out</a></li>
                 {% else %}
@@ -29,7 +29,7 @@
     </div>
     <div class="body">
         <main class="container">
-            <h2>Looking for a State Park?</h2>
+            <h2>Looking for a National Park?</h2>
             <form action="/parks/searched">
                 <label for="stateCode">State Abbreviation:</label>
                 <input type="text" name="stateCode" placeholder="Two letters only">

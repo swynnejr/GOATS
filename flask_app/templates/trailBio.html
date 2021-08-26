@@ -18,7 +18,7 @@
                 <li><a href="/admin">{{session['username']}}</a></li>
                 <li><a href="/trails">Find a 14er</a></li>
                 <li><a href="/athletes">Search Athletes</a></li>
-                <li><a href="/parks">Find a State Park</a></li>
+                <li><a href="/parks">Find a National Park</a></li>
                 {% if session['username'] %}
                 <li><a href="/logout">Log Out</a></li>
                 {% else %}
@@ -27,9 +27,9 @@
             </ul>
         </nav>
     </div>
-    <div class="body">
-        <h2>Trail : {{trail.name}}</h2>
-        <main class="container flexed">
+    <div class="body container flexed">
+        <main>
+            <h2>Trail : {{trail.name}}</h2>
             <ul>
                 <li>Starting Point:</li>
                 <li class="details">{{trail.start}}</li>
@@ -45,7 +45,9 @@
                 <li class="details">{{trail.state}}</li>
             </ul>
         </main>
-        <p class="container">{{trail.bio|safe}}</p>
+            <div>
+                <iframe class="alltrails" src={{trail.alltrails}} width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="AllTrails: Trail Guides and Maps for Hiking, Camping, and Running"></iframe>
+            </div>
     </div>
 </body>
 </html>
