@@ -1,3 +1,5 @@
+This worked for 
+
 async function getParksData() {
     const myURL = new URL(window.location.href);
 
@@ -9,12 +11,7 @@ async function getParksData() {
     console.log(myURL);
     console.log(search);
     console.log(parksData.data);
-    const html = parksData.data.map(park => {
-        return `<a href="${park.url}">${park.fullName}</a><br>
-        <h4>${park.description}</h4><br>`
-    }).join('');
-    document.querySelector("#search_results").insertAdjacentHTML("afterbegin", html);
-    console.log(html);
+    const html = parksData.data.map();
     return parksData.data;
 }
     

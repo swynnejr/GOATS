@@ -26,16 +26,18 @@
         </nav>
     </div>
     <div class="body">
+        <h2 id="search">State Parks in: {{search}}</h2>
         <main class="container">
-            <h2 id="search">State Parks in {{search}}</h2>
+            <div id="search_results"></div><br>
 
-            <h3>Search again:</h3>
-            <form action="/parks/searched">
-                <label for="stateCode">State Abbreviation:</label>
-                <input type="text" name="stateCode" placeholder="Two letters only">
-                <input type="submit" value="Search by State">
-            </form>
-        </main>
+        </main><br>
+        <h3>Search again:</h3>
+        <form action="/parks/searched">
+            <label for="stateCode">State Abbreviation:</label>
+            <input type="text" name="stateCode" placeholder="Two letters only">
+            <input type="submit" value="Search by State">
+        </form><br>
+        <br>
     </div>
 
 
