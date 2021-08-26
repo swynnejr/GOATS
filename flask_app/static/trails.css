@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Bevan', cursive;
+    font-family: 'Ubuntu', sans-serif;
     font-style: normal;
 
 }
@@ -24,6 +24,8 @@ html {
     min-width: 987px;
     align-items: center;
     justify-content: center;
+    background: rgba(163, 153, 144, 0.5);
+
 }
 
 /* Nav bar */
@@ -61,8 +63,7 @@ nav ul {
     align-items: center;
     margin: 150px auto;
     padding: 1.5em;
-    background-color: rgb(179, 174, 174);
-    opacity: 80%;
+    background: rgba(163, 153, 144, 0.5);
 }
 
 #myInput {
@@ -96,6 +97,7 @@ nav ul {
 #myTable tr.header, #myTable tr:hover {
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
+    opacity: 1;
 }
 /* Utility classes */
 

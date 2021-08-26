@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Bevan', cursive;
+    font-family: 'Ubuntu', sans-serif;
     font-style: normal;
 }
 
@@ -23,6 +23,8 @@ html {
     min-width: 987px;
     align-items: center;
     justify-content: center;
+    background: rgba(163, 153, 144, 0.5);
+
 }
 
 /* Nav bar */
