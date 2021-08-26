@@ -25,7 +25,7 @@ html {
     min-width: 987px;
     align-items: center;
     justify-content: center;
-    background: rgba(163, 153, 144, 0.25);
+    background: rgba(163, 153, 144, 0.45);
 
 }
 
@@ -69,23 +69,24 @@ nav ul {
 .body {
     text-align: center;
     width: 30%;
-    text-shadow: 1px 1px rgb(255, 255, 255);
+    text-shadow: .5px .5px rgb(255, 255, 255);
     font-size: 125%;
     
 }
 
 main {
-    background: rgba(163, 153, 144, 0.5);
-
+    /* background: rgba(163, 153, 144, 0.5); */
+    background-image: linear-gradient(.25turn, rgba(163, 153, 144, 0),rgba(163, 153, 144, .9) 50%, rgba(163, 153, 144, 0) 100%);
 }
 
 iframe {
     min-width: 500px;
+    box-shadow: 2px 2px 2px 2px black;
 }
 
 h2 {
     font-size: 2em;
-    text-shadow: 1px 1px rgb(255, 255, 255);
+    text-shadow: .5px .5px rgb(255, 255, 255);
     margin: 30px;
 }
 

@@ -21,6 +21,7 @@ html {
 
 main {
     margin: 0 auto
+
 }
 
 .turquoise-top {
@@ -87,11 +88,15 @@ p {
     text-shadow: 1px 1px black;
     padding: 50px;
     max-width: 50%;
+    background-image: linear-gradient(.25turn, rgba(163, 153, 144, 0),rgba(163, 153, 144, .75) 10%, rgba(163, 153, 144, .75) 90%, rgba(163, 153, 144, 0) 100%);
+
 }
 
 main ul {
     min-width: 150px;
     list-style-type: none;
+    background-image: linear-gradient(.25turn, rgba(163, 153, 144, 0),rgba(163, 153, 144, .75) 25%, rgba(163, 153, 144, .75) 75%, rgba(163, 153, 144, 0) 100%);
+
 }
 
 
@@ -109,7 +114,7 @@ main ul {
 }
 
 #myInput {
-    background-image: url('/static/searchicon.png'); /* Add a search icon to input */
+    background-image: url(searchicon.png); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
     width: 100%; /* Full-width */

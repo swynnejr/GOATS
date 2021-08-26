@@ -34,7 +34,7 @@
         </nav>
     </div>
     <div class="container" id="searchAthletes">
-        <h3>Athletes:</h3>
+        <h1>Athletes:</h1>
         <input type="text" id="myInput" onkeyup="searchAthletes()" placeholder="Search for names..">
         <table id="myTable">
             <thead>
@@ -47,8 +47,8 @@
             {% for athlete in athletes %}
             <tr>
                 <td><a href="/athletes/{{athlete.id}}">{{athlete.first_name}} {{athlete.last_name}}</a></td>
-                <td>{{athlete.home_state}}</td>
-                <td>{{athlete.nationality}}</td>
+                <td><a href="/athletes/{{athlete.id}}">{{athlete.home_state}}</a></td>
+                <td><a href="/athletes/{{athlete.id}}">{{athlete.nationality}}</a></td>
             </tr>
             {% endfor %}
         </table><br>

@@ -34,7 +34,7 @@
         </nav>
     </div>
     <div class="container" id="searchTrails">
-        <h3>Trails:</h3>
+        <h1>Trails:</h1>
         <input type="text" id="myInput" onkeyup="searchTrails()" placeholder="Search for names..">
         <table id="myTable">
             <thead>
@@ -50,11 +50,11 @@
             {% for trail in trails %}
             <tr>
                 <td><a href="/trails/{{trail.id}}">{{trail.name}}</a></td>
-                <td>{{trail.peak_height}}</td>
-                <td>{{trail.vertical_gain}}</td>
-                <td>{{trail.start}}</td>
-                <td>{{trail.variation}}</td>
-                <td>{{trail.distance}}</td>
+                <td><a href="/trails/{{trail.id}}">{{trail.peak_height}}</a></td>
+                <td><a href="/trails/{{trail.id}}">{{trail.vertical_gain}}</a></td>
+                <td><a href="/trails/{{trail.id}}">{{trail.start}}</a></td>
+                <td><a href="/trails/{{trail.id}}">{{trail.variation}}</a></td>
+                <td><a href="/trails/{{trail.id}}">{{trail.distance}}</a></td>
             </tr>
             {% endfor %}
         </table><br>
