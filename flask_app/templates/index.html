@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');;</style>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <title>GOATS of the Mountain</title>
 </head>
@@ -37,25 +37,38 @@
         </main>
     </div>
     <!-- Slideshow container -->
-    <div class="slideshow-container">
+    <div class="slideshow-container container">
 
         <!-- Full-width images with number and caption text -->
+        
         <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="{{ url_for('static', filename='sjd.jpeg') }}" style="width:100%">
-            <div class="text">Seth James Demoor: <a href="https://fastestknowntime.com/podcast/95-seth-demoor">Image from fastestknowntime.com</a></div>
+            <div class="numbertext">1/5</div>
+            <img src="{{ url_for('static', filename='courtneydauwalter.jpg') }}" style="width:100%">
+            <div class="text">Courtney Dauwalter: <a href="https://www.joaomfaria.com/">Image from Joao M Faria</a></div>
         </div>
 
         <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="{{ url_for('static', filename='kilian2.jpg') }}" style="width:100%">
-            <div class="text">Kilian Jornet: <a href="https://www.kilianjornet.cat/en/about-me">Image from kilianjornet.cat</a></div>
+            <div class="numbertext">2/5</div>
+            <img src="{{ url_for('static', filename='josephgray.jpg') }}" style="width:100%">
+            <div class="text">Joseph Gray: <a href="https://www.bikelife.pl/">Image from BikeLife</a></div>
+        </div>
+        
+        <div class="mySlides fade">
+            <div class="numbertext">3/5</div>
+            <img src="{{ url_for('static', filename='sethdemoor.jpg') }}" style="width:100%">
+            <div class="text">Seth James Demoor: <a href="https://demoorglobalrunning.com">Image from DemoorGlobalRunning.com</a></div>
         </div>
 
         <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="{{ url_for('static', filename='walmsleyEvanBarnes.jpg') }}" style="width:100%">
-            <div class="text">Jim Walmsley: <a href="https://www.instagram.com/evanbarnes__/">Image from @evanbarnes__ Instagram</a></div>
+            <div class="numbertext">4/5</div>
+            <img src="{{ url_for('static', filename='kilianjornet.jpg') }}" style="width:100%">
+            <div class="text">Kilian Jornet: <a href="https://www.kilianjornet.cat/">Image from kilianjornet.cat</a></div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">5/5</div>
+            <img src="{{ url_for('static', filename='jimwalmsley.jpg') }}" style="width:100%">
+            <div class="text">Jim Walmsley: <a href="https://paulmnelson.com">Image from Paul Nelson</a></div>
         </div>
 
         <!-- Next and previous buttons -->
@@ -69,6 +82,9 @@
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+
     </div>
 </body>
 

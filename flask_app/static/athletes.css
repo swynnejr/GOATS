@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-style: normal;
 
 }
@@ -96,6 +96,13 @@ main ul {
     min-width: 150px;
     list-style-type: none;
     background-image: linear-gradient(.25turn, rgba(163, 153, 144, 0),rgba(163, 153, 144, .75) 25%, rgba(163, 153, 144, .75) 75%, rgba(163, 153, 144, 0) 100%);
+
+}
+
+article {
+    max-height: 700px;
+    max max-width: 750px;
+    overflow-y: auto;
 
 }
 

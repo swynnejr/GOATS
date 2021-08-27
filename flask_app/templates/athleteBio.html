@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='athletes.css') }}">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');;
     </style>
     <title>GOATS of the Mountain</title>
 </head>
@@ -45,7 +45,9 @@
             <iframe width="840" height="630" src="https://www.youtube.com/embed/{{athlete.youtube}}?autoplay=1&mute=1">
             </iframe>
         </main>
-        <p class="container">{{athlete.bio|safe}}</p>
+        <article>
+            <p class="container">{{athlete.bio|safe}}</p>
+        </article>
     </div>
 </body>
 
