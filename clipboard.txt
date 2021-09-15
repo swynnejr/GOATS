@@ -47,3 +47,30 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
 }
+
+
+
+
+[Unit]
+Description=Gunicorn instance
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/GOATS
+Environment="PATH=/home/ubuntu/GOATS/venv/bin"
+ExecStart=/home/ubuntu/GOATS/venv/bin/gunicorn --workers 3 --bind unix:GOATS.sock -m 007 wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+[Unit]
+Description=Gunicorn instance
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/GOATS
+Environment="PATH=/home/ubuntu/GOATS/venv/bin"
+ExecStart=/home/ubuntu/GOATS/venv/bin/gunicorn --workers 3 --bind unix:GOATS.sock -m 007 wsgi:application
+[Install]
+WantedBy=multi-user.target
